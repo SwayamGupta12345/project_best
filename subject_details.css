@@ -1,0 +1,125 @@
+:root {
+    /* Background Colors */
+    --background-main: #F2E9E4; /* Updated with a light, warm ivory color */
+    --background-header-main-top: linear-gradient(180deg, #22223B, #4A4E69); /* Dark to slightly lighter gradient based on palette */
+    --background-header-footer: #22223B; /* Dark Blue for header and footer */
+    --background-button: #4A4E69; /* Muted Blue for buttons */
+    --background-input: #C9ADA7; /* Soft Beige for inputs */
+    --background-card: #FFFFFF; /* Keep white or use #F2E9E4 for a softer card */
+    --background-dropdown: #FFFFFF;
+    --background-nav-links-mobile: #9A8C98; /* Muted Purple for mobile nav links */
+    --background-nav-link-hover: rgba(34, 34, 59, 0.3); /* Transparent Dark Blue for hover */
+    --navbar: #4A4E69; /* Medium muted blue-gray from palette */
+ 
+    /* Text Colors */
+    --text-header: #22223B; /* Deep navy from palette for main text */
+    --text-primary: #22223B; /* Dark Blue for primary text */
+    --text-light: #F2E9E4; /* Light Cream for lighter text */
+    --text-dropdown: #4A4E69; /* Muted Blue for dropdown text */
+    --text-link: #4A4E69; /* Muted Blue for links */
+    --text-link-hover: #22223B; /* Dark Blue on link hover */
+    --text-card: #9A8C98; /* Muted Purple for card text */
+
+    /* Border Colors */
+    --border-primary: #4A4E69; /* Muted Blue for primary borders */
+    --border-card: #C9ADA7; /* Soft Beige for card border */
+    --border-dropdown: #9A8C98; /* Muted Purple for dropdown border */
+
+    /* Shadow Colors */
+    --box-shadow-color: rgba(34, 34, 59, 0.15); /* Dark Blue shadow */
+    --box-shadow-hover: rgba(34, 34, 59, 0.3); /* Darker shadow on hover */
+}
+* {
+    box-sizing: border-box; /* Include padding and border in element's total width and height */
+    margin: 0; /* Remove default margins */
+    padding: 0; /* Remove default padding */
+}
+body {
+    background-color: #f2f2f2;
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #333;
+    overflow-x: hidden; 
+}
+
+.container {
+    display: flex;
+    flex-direction: row; /* Use row direction */
+    width: 100%; /* Set to 100% for responsiveness */
+    padding: 1px;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 20px; /* Maintain gap between items */
+}
+
+.container p {
+    flex: 2; /* Give more space to description */
+    margin-right: 20px; /* Space between description and image */
+    font-size: 1.2rem;
+    line-height: 1;
+}
+
+.container img {
+    flex: 1; /* Less space for the image */
+    border-radius: 1rem;
+    width: 50%;
+    height: 300px;
+    object-fit: cover;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin: 0.5rem;
+    padding: 1.5dvw;
+}
+
+.subject-links {
+    margin: 1rem;
+    width: 100%;
+    margin-bottom:2rem;
+    border-collapse: collapse;
+    table-layout: fixed; /* Ensure fixed layout for uniform cell sizes */
+}
+
+.subject-links th,
+.subject-links td {
+    border: 1px solid #ddd;
+    padding: 0.8rem;
+    text-align: left;
+    width: 50%; /* Set uniform width for each column */
+}
+
+.subject-links th {
+
+    background-color:#3B3B56;
+    color: #F2E9E4;}
+
+.subject-links tr:hover {
+    background-color: #f5f5f5;
+}
+
+.subject-links td a {
+    color: #795cd0;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.subject-links td a:hover {
+    color: #ffcc00;
+}
+
+.flex {
+    display: flex;
+    flex-direction: column;
+    margin: 3dvw;
+}
+
+@media (max-width: 480px) {
+    .container img {
+        display: none;
+    }
+}
+
+.head {
+    padding: 2rem;
+    margin: 0 auto;
+    margin-left: 10dvw;
+}
+

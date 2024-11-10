@@ -1,0 +1,140 @@
+/* Container Styling */
+.ap_container {
+    max-width: 500px;
+    margin: 1rem auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    font-family: Arial, sans-serif;
+    color: #333;
+}
+
+/* Header */
+.ap_container h1 {
+    font-size: 30px;
+    font-weight: bold;
+    text-align: center;
+    color: #363852;
+    margin-bottom: 20px;
+}
+
+/* Form Styling */
+.ap_container form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.ap_container label {
+    font-size: 18px;
+    color: #444;
+    font-weight: 600;
+}
+
+.ap_container input[type="text"],
+.ap_container input[type="number"],
+.ap_container textarea {
+    width: 100%;
+    padding: 10px;
+    border: 2px solid #0c0b0b;
+    border-radius: 4px;
+    font-size: 15px;
+    Font-weight:500;
+}
+
+.ap_container textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+.ap_container form .sdata{
+    font-size:1em;
+}
+.ap_container form .sdata .sdata1{
+    font-size:0.8em;
+}
+/* Ensure both buttons appear inline */
+.soption {
+    display: flex;
+    gap: 20px; /* Adds a 20px gap between buttons */
+    align-items: center; /* Aligns buttons vertically center */
+}
+
+/* Styles for both submit and back buttons */
+.soption input[type="submit"], .soption .back {
+    background-color: var(--background-button); /* Primary button color */
+    color: var(--text-light); /* Light text color */
+    font-weight: bold;
+    width: 220px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    text-align: center;
+    transition: background-color 0.3s, transform 0.2s; /* Smooth color and transform transition */
+    box-shadow: 0px 4px 6px var(--box-shadow-color); /* Subtle shadow */
+    font-size: 20px;
+}
+
+/* Hover effect for both submit and back buttons */
+.soption input[type="submit"]:hover, .soption .back:hover {
+    background-color: #354254; /* Darker shade for hover */
+    box-shadow: 0px 6px 8px var(--box-shadow-hover); /* Enhanced shadow on hover */
+    transform: scale(1.05); /* Slightly enlarge on hover */
+}
+
+/* Additional style for the 'Return to Admin' button */
+.soption .back {
+    background-color: var(--background-button); /* Matches other buttons */
+    color: var(--text-light);
+    font-weight: bold;
+    cursor: pointer;
+    text-decoration: none;
+}
+/* Note */
+.ap_container h3 {
+    font-size: 17px;
+    font-weight: bold;
+    color: #888;
+    text-align: center;
+    margin: 10px;
+    word-spacing:1.5px;
+}
+
+.styled-select:focus {
+    border-color: #4CAF50; /* Change border color on focus */
+    outline: none; /* Removes outline */
+}
+.form-group .sdata{
+    font-size:1em;
+}
+.form-group .sdata1{
+    font-size:0.8em;
+}
+.button-container {
+    display: flex;
+    gap: 10px; /* Adjust spacing between buttons as desired */
+    align-items: center; /* Align buttons vertically */
+    margin-top: 10px;
+}
+
+.btn-edit-news, .btn-return-admin {
+    padding: 8px 15px;
+    font-size: 16px;
+    text-decoration: none;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    text-align: center;
+}
+
+.btn-return-admin {
+    background-color: #6c757d; /* Different color for the Return button */
+}
+
+.btn-edit-news:hover, .btn-return-admin:hover {
+    background-color: #0056b3; /* Hover effect */
+}

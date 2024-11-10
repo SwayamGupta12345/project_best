@@ -1,0 +1,977 @@
+:root {
+    /* Background Colors */
+    --background-main: #F2E9E4; /* Updated with a light, warm ivory color */
+    --background-header-main-top: linear-gradient(180deg, #22223B, #4A4E69); /* Dark to slightly lighter gradient based on palette */
+    --background-header-footer: #22223B; /* Dark Blue for header and footer */
+    --background-button: #4A4E69; /* Muted Blue for buttons */
+    --background-input: #C9ADA7; /* Soft Beige for inputs */
+    --background-card: #FFFFFF; /* Keep white or use #F2E9E4 for a softer card */
+    --background-dropdown: #FFFFFF;
+    --background-nav-links-mobile: #9A8C98; /* Muted Purple for mobile nav links */
+    --background-nav-link-hover: rgba(34, 34, 59, 0.3); /* Transparent Dark Blue for hover */
+    --navbar: #4A4E69; /* Medium muted blue-gray from palette */
+ 
+    /* Text Colors */
+    --text-header: #22223B; /* Deep navy from palette for main text */
+    --text-primary: #22223B; /* Dark Blue for primary text */
+    --text-light: #F2E9E4; /* Light Cream for lighter text */
+    --text-dropdown: #4A4E69; /* Muted Blue for dropdown text */
+    --text-link: #4A4E69; /* Muted Blue for links */
+    --text-link-hover: #22223B; /* Dark Blue on link hover */
+    --text-card: #9A8C98; /* Muted Purple for card text */
+
+    /* Border Colors */
+    --border-primary: #4A4E69; /* Muted Blue for primary borders */
+    --border-card: #C9ADA7; /* Soft Beige for card border */
+    --border-dropdown: #9A8C98; /* Muted Purple for dropdown border */
+
+    /* Shadow Colors */
+    --box-shadow-color: rgba(34, 34, 59, 0.15); /* Dark Blue shadow */
+    --box-shadow-hover: rgba(34, 34, 59, 0.3); /* Darker shadow on hover */
+}
+
+* {
+    box-sizing: border-box;
+    /* Include padding and border in element's total width and height */
+    margin: 0;
+    /* Remove default margins */
+    padding: 0;
+    /* Remove default padding */
+}
+
+body {
+    background-color: var(--background-main);
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: var(--text-primary);
+    overflow-x: hidden;
+}
+hr{
+    border: 0;
+    height: 1px;
+}
+/* Header Styling */
+header {
+    background-color: var(--background-header-main-top);
+    background: var(--background-header-main-top);
+    color: var(--text-light);
+    padding: 10px 10px;
+    /* box-shadow: 0px 4px 8px var(--box-shadow-color); */
+    text-align: center;
+    top: 0px;  
+    width: 100%;
+    z-index: 10;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 3rem;
+    padding: 1rem; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.logo-text {
+    display: flex;
+    align-items: center;
+    gap: 12px; /* Adjusts spacing between logo and text */
+}
+
+.logo-text img {
+    height: 90px    ; /* Adjust for a more proportionate logo size */
+    width: 75px;
+    border-radius: 10px;
+    margin-right: 10px;
+}
+
+.logo-text h1 {
+    font-size: 2.5rem; /* Slightly larger for emphasis */
+    font-weight: 700;
+    margin: 0;
+    color: var(--text-light);
+}
+h2, h3 {
+    color: var(--text-primary); /* Medium blue for headings */
+}
+button {
+    background-color: var(--background-button); /* Light blue for button background */
+    color: var(--text-light);
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: var(--text-link-hover); /* Darker blue on hover */
+}
+input, select, textarea {
+    background-color: var(--background-input); /* Aqua blue for input backgrounds */
+    color: var(--text-primary);
+    border: 1px solid var(--border-primary);
+    padding: 8px;
+    border-radius: 5px;
+    margin: 10px 0;
+}
+
+a {
+    color: var(--text-link);
+    text-decoration: none;
+}
+
+a:hover {
+    color: var(--text-link-hover);
+}
+
+footer {
+    background-color: var(--background-main);
+    color: var(--border-primary);
+    text-align: center;
+    padding: 10px;
+    /*position: fixed;*/
+    bottom: 0;
+    width: 100%;
+}
+
+/* Card or Section Styling */
+.section {
+    background-color: var(--background-main);
+    border: 1px solid var(--border-primary);
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 5px;
+}
+/* Header Title Styling */
+header h1 {
+    font-size: 2em;
+    margin: 0;
+    font-weight: bold;
+    color: var(--text-light);
+    letter-spacing: 1px;
+}
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 20px;
+    }
+    .logo-text img {
+        height: 100px;
+        width:80px
+    }
+}
+nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: sticky;
+    background-color: var(--navbar);
+    height: 4rem;
+    padding: 0 1rem;
+    box-shadow: 0 4px 6px var(--box-shadow-color);
+    top:-1px;
+}
+/* Style for navigation links */
+.nav-links {
+    display: nove;
+    justify-content: center;
+    gap: 15px;
+}
+.nav-links.show {
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    background: linear-gradient(#22223B, #4A4E69);
+    border-radius: 5px;
+    width: auto; /* Width adjusts based on content */
+    padding: 15px 20px; /* Adjust padding for balanced spacing */
+    align-items: flex-start; /* Align items to the left for better layout */
+    gap: 10px; /* Add spacing between items */
+}
+
+.nav-links select {
+    padding: 5px;
+    font-size: 1em;
+    color: var(--text-primary);
+    background-color: var(--background-dropdown);
+    border: 1px solid var(--border-dropdown);
+    border-radius: 5px;
+}
+.admin{
+    color: var(--text-light);
+    font-size: 1.2em;
+    letter-spacing: 0.25px;
+    font-weight: bold;
+    padding: 5px 10px;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+    margin-left:10px;
+}
+
+.admin:hover {
+    background-color: white;
+}
+.nav-links a {
+    color: var(--text-light);
+    text-decoration: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+}
+
+.nav-links a:hover {
+    background-color:white;
+    color: black;
+}
+
+/* Mobile View for Header */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 1.5em;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        gap: 15px;
+        padding: 10px;
+    }
+
+    .nav-links select {
+        max-width: 100%;
+        font-size: 1em;
+    }
+}
+
+/* User dropdown menu styling */
+.user-dropdown {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.user-email {
+    color: var(--text-light);
+    font-weight: bold;
+    font-size: 1.5em;
+    padding: 5px 10px;
+    letter-spacing: 0.25px;
+    
+    /* transition: background-color 0.3s; */
+}
+
+.user-email:hover {
+    background-color: var(--background-nav-link-hover);
+}
+
+/* Dropdown content initially hidden */
+.dropdown-content {
+    margin-top: 20px;
+    display: none;
+    position: absolute;
+    border-style: solid;
+    border-color:var(--border-dropdown);
+    justify-content: center;
+    background-color: var(--background-dropdown);
+    color: var(--text-dropdown);
+    min-width: 100px;
+    box-shadow: 0px 8px 16px var(--box-shadow-color);
+    border-radius: 50px;
+    z-index: 5;
+}
+.dropdown-content.show{
+    display: block;
+}
+/* Links within the dropdown */
+.dropdown-content a {
+    color: var(--text-primary);
+    padding: 10px;
+    display: block;
+    text-decoration: none;
+    text-align: center;
+    border-bottom: 1px solid var(--border-dropdown);
+}
+
+.dropdown-content a:hover {
+    background-color: var(--background-button);
+    color: var(--text-light);
+    border-radius: 50px;
+}
+
+/* Show the dropdown on click */
+.user-dropdown.show .dropdown-content {
+    display: block;
+}
+
+/* Styling for Semester Select Dropdown */
+#semester-menu {
+    width: 100%;
+    max-width: 200px;
+    padding: 10px;
+    font-size: 16px;
+    color: var(--text-primary);
+    background-color: var(--background-dropdown);
+    border: 1px solid var(--border-dropdown);
+    border-radius: 5px;
+    margin-top: 5px;
+    cursor: pointer;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+#semester-menu:focus {
+    border-color: var(--text-link-hover);
+    box-shadow: 0 0 5px var(--box-shadow-color);
+}
+
+#semester-menu option {
+    padding: 10px;
+    color: #333;
+    background-color: var(--background-dropdown);
+    border-bottom: 1px solid var(--border-dropdown);
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--text-light);
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+}
+
+nav a.home {
+    margin-right: auto;
+    padding-left: 1rem;
+    font-weight: 900;
+    letter-spacing: 1px;
+}
+
+nav a:hover {
+    color: var(--text-link-hover);
+    background-color: white;
+}
+
+.burger {
+    display: none;
+    cursor: pointer;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 2rem;
+    width: 2rem;
+    position: absolute;
+    left: 1rem;
+}
+
+.burger div {
+    background-color: var(--text-light);
+    height: 0.25rem;
+    width: 1.5rem;
+    margin: 0.2rem 0;
+    border-radius: 0.1rem;
+    transition: 0.3s ease;
+}
+.nav-links {
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    flex-grow: 1;
+    gap: 1rem;
+    font-size: large;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.nav-links a {
+    display: block;
+}
+
+
+.container {
+    display: grid;
+    grid-template-columns: 1.75fr 2fr;
+    gap: 20px;
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.container img {
+    border-radius: 1rem;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin: 0.5rem;
+}
+
+.container p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+}
+
+.sems {
+    background: var(--background-button);
+    height: 3.5rem;
+    width: 100%;
+    border: 3px solid var(--text-light);
+    border-radius: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 2rem 0;
+    box-shadow: 0 4px 6px var(--box-shadow-color);
+}
+
+.SEMTEXT {
+    text-align: center;
+    font-size: 1.25rem;
+    color: var(--text-light);
+    font-weight: bold;
+}
+/* Default layout for large screens (4 cards per row) */
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    padding: 1rem;
+}
+
+.card {
+    background: var(--background-card);
+    border-radius: 1rem;
+    border-style: groove;
+    border-color: var(--border-card);
+    box-shadow: 0 6px 12px var(--box-shadow-color);
+    width: 22%; /* Four cards per row on large screens */
+    min-width: 150px;
+    max-width: 200px;
+    overflow: hidden;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    padding: 1rem 1rem 3rem 1rem;
+    margin: 1rem;
+}
+
+.card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-style: solid;
+    border-color: var(--border-primary);
+    border-bottom: 2px solid var(--border-primary);
+    border-radius: 1rem;
+}
+
+.card h3 {
+    margin: 1rem 0;
+    font-size: 1.4rem;
+    color: var(--text-primary);
+}
+
+.card p {
+    padding: 0 1rem 1rem;
+    font-size: 1rem;
+    color: var(--text-card);
+}
+
+.card a {
+    text-decoration: none;
+    color: var(--text-link);
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.card a:hover {
+    color: var(--text-link-hover);
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 24px var(--box-shadow-hover);
+}
+
+/* Medium screens: 4 cards per row */
+@media (max-width: 1132px) {
+    .card {
+        width: 22%;
+    }
+    .card-container {
+        gap: 0.5rem;
+        padding: 1rem;
+    }
+}
+
+/* Adjust card layout at 800px */
+@media (max-width: 800px) {
+    .card {
+        width: 30%;
+    }
+    .card-container {
+        gap: 1rem;
+        padding: 1rem;
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 50%;
+        position: absolute;
+        top: 4rem;
+        left: -100%; /* Start off-screen */
+        background-color: var(--background-header-main-top);
+        box-shadow: 0 4px 6px var(--box-shadow-color);
+        transition: all 0.3s ease-in-out;
+        border-bottom-left-radius: 5px;
+        border-bottom-right-radius: 5px;
+        padding: 1rem;
+    }
+    nav a {
+        font-size: 0.9rem;
+        margin-left: 50px;
+    }
+    .nav-links.show {
+        display: flex;
+        padding: 1rem 0;
+        left: 0;
+        transition: all 0.3s ease-in-out;
+    }
+    .burger {
+        display: flex;
+        cursor: pointer;
+    }
+}
+/* Full-width cards and responsive nav-links at 480px */
+@media (max-width: 480px) {
+    .card {
+        width: 45%;
+    }
+    .card-container {
+        gap: 0.5rem;
+        padding: 0.5rem;
+    }
+    
+    .nav-links {
+        padding: 0.5rem;
+        border-radius: 5px;
+        right: -100%; /* Start hidden to the right */
+        width: 100%;
+        background-color: var(--background-header-main-top);
+        transition: right 0.5s ease-in-out;
+        z-index: 10;
+    }
+
+    .nav-links.show {
+        right: 0; /* Slide in from the right */
+    }
+    nav a {
+        font-size: 0.9rem;
+        margin-left: 40px;
+    }
+    .container img {
+        display: none;
+    }
+    .container {
+        display: grid;
+    }
+}
+footer {
+    background-color: var(--background-header-footer);
+    color: var(--text-light);
+    padding: 2rem 0;
+    text-align: center;
+}
+
+.footer-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 2rem; /* Adjust left and right padding for even spacing */
+    width: 100%; /* Ensures the container spans the full width */
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Two columns, each takes half of the width */
+    gap: 2rem; /* Adds space between columns */
+    align-items: center;
+    justify-items: center;
+    width: 100%;
+}
+
+.footer-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 1rem;
+}
+
+.footer-profile {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.profile-image {
+    border-radius: 50%;
+    width: 90px;
+    height: 90px;
+    margin-right: 1.2rem;
+    object-fit: cover;
+}
+
+.footer-details h4 {
+    margin: 0 0 0.5rem 0;
+}
+
+.footer-item p {
+    margin: 0.5rem 0;
+    display:flex; 
+    align-items:center;
+
+}
+
+.footer-item ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.footer-item ul li {
+    margin: 0.5rem 0;
+}
+
+.footer-item a {
+    color: var(--text-light);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-item a:hover {
+    color: var(--text-light);
+}
+
+.footer-bottom {
+    margin-top: 2rem;
+    font-size: 0.9rem;
+}
+.flex-col{
+    display: flex;
+    flex-direction: column;
+}
+@media (max-width: 768px) {
+    .footer-content {
+        grid-template-columns: 1fr; /* Stack items on smaller screens */
+        padding:0.05dvh;
+    }
+
+    .footer-item {
+        width: 100%;
+        margin-bottom: 1rem;
+    }
+}
+
+.login-form,
+.register-form {
+    position: fixed;
+    top: 0;
+    right: -400px; /* Start off-screen */
+    width: 400px;
+    height: 100%;
+    background-color: var(--background-card);
+    box-shadow: -2px 0 5px var(--box-shadow-color);
+    transition: right 0.3s ease; /* Animation for sliding */
+    padding: 2rem;
+    z-index: 1000; /* Ensure it appears on top */
+    display: flex;
+    flex-direction: column; /* Stack children vertically */
+    justify-content: center; /* Center children vertically */
+    align-items: center; /* Center children horizontally */
+    padding-left: 2rem;
+    border-top-left-radius: 5rem;
+    border-bottom-left-radius:2rem;
+}
+
+.login-form.active,
+.register-form.active {
+    right: 0;
+    /* Slide in */
+}
+
+.login-form h2,
+.register-form h2 {
+    margin-bottom: 1rem;
+    text-align: center; /* Center heading text */
+}
+.login-form input,
+.register-form input {
+    width: 100%; /* Full width of the form */
+    max-width: 400px; /* Optional: set a max width */
+    padding: 1rem;
+    margin: 0.5rem 0;
+    border: 1px solid #ccc;
+    border-radius: 0.25rem;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    align-items: center;
+}
+
+.login-form button,
+.register-form button {
+    width: 100%; /* Full width of the form */
+    max-width: 400px; /* Optional: set a max width */
+    padding: 1rem;
+    background-color: var(--background-button);
+    color: #fff;
+    border: none;
+    border-radius: 0.25rem;
+    cursor: pointer;
+    font-size: 1.25rem;
+    transition: background-color 0.3s ease;
+    align-items: center;
+    margin: 1rem 0rem 1rem 0rem ;
+}
+.flex-col .close-button{
+    height: 20px;
+    position:absolute;
+    right:15px;
+    top:155px;
+    width:20px;
+}
+.login-form button:hover,
+.register-form button:hover {
+    background-color: var(--text-link-hover);
+}
+.flex-col .close-button:hover{
+    color:white;
+}
+.login-form .close-button,
+.register-form .close-button {
+    background-color: transparent;
+    border: none;
+    font-size: 2rem;
+    cursor: pointer;
+    color: var(--text-primary);
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+}
+
+.register-form.active {
+    right: 0;
+    /* Slide in */
+}
+/* Styling for mobile screens (500px or less) */
+@media (max-width: 500px) {
+
+    .login-form,
+    .register-form {border-top-left-radius: 0rem;
+        border-bottom-left-radius:0rem;}
+
+
+    .login-form.active,
+    .register-form.active {
+        right: 0; /* Start from the right side, no off-screen */
+        width: 100%; /* Full width */
+        height: 100%; /* Full height */
+        border-radius: 0; /* Remove rounded corners */
+        padding: 1rem; /* Reduce padding to fit smaller screens */
+    }
+
+    .login-form h2,
+    .register-form h2 {
+        font-size: 1.5rem; /* Slightly reduce the font size for headings */
+    }
+
+    .login-form input,
+    .register-form input {
+        font-size: 0.875rem; /* Adjust input font size */
+        padding: 0.75rem; /* Reduce padding */
+    }
+
+    .login-form button,
+    .register-form button {
+        font-size: 1rem; /* Adjust button font size */
+        padding: 0.75rem; /* Reduce button padding */
+    }
+
+    .login-form .close-button,
+    .register-form .close-button {
+        font-size: 1.5rem; /* Reduce close button size */
+        margin-bottom: 1rem; /* Add some space below the close button */
+    }
+}
+
+.user-email {
+    color: var(--text-light);
+
+}
+.user-email:hover{
+    border-radius: 10px;
+    background-color: white;
+    color:black;
+}
+.styled-select {
+    width: 100%;
+    max-width: 200px; /* Adjust based on your design */
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    color: #333;
+    outline: none;
+    appearance: none; /* Removes default dropdown arrow */
+    position: relative;
+    background-image: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 6"%3E%3Cpath fill="%23333" d="M0 0l5 6 5-6H0z"/%3E%3C/svg%3E'); /* Custom dropdown arrow */
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 12px;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.styled-select:hover {
+    border-color: #888;
+}
+
+.styled-select:focus {
+    border-color: #3D5D82;
+    box-shadow: 0 0 5px rgba(61, 93, 130, 0.5);
+}
+
+.styled-select option {
+    color: #333;
+    background: #fff;
+    padding: 10px;
+}
+
+/* Optional: Customize the dropdown arrow and align it */
+.styled-select::after {
+    content: "▼";
+    position: absolute;
+    right: 10px;
+    pointer-events: none;
+}
+
+/* Responsive design: adjust width on smaller screens */
+@media (max-width: 768px) {
+    .styled-select {
+        width: 100%;
+    }
+}
+
+     
+.an_container {
+    display: grid;
+    grid-template-columns: 2.5fr 1fr; /* Adjusted ratio: announcements take 2 parts, news takes 1.5 parts */
+    gap: 1.5dvw;
+    padding: 3rem;
+    max-width: 1400px;
+    margin: 2rem auto;
+}
+
+.announcement {
+    display: grid;
+    grid-template-columns: 2.5fr 1.5fr; /* Set text to image ratio */
+    background-color: #fff;
+    padding: 1.8rem;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    gap: 1.5rem;
+    align-items: center; /* Center content vertically */
+    margin:0rem 1.5rem 1.5rem 1.5rem;
+}
+
+.announcement h2 {
+    margin: 0 0 10px;
+    font-size: 1.6em;
+    color: #333;
+}
+
+.announcement p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: #666;
+    margin: 10px 0;
+}
+
+.announcement .text-content {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.announcement img {
+    width: 300px; /* Full width of the grid cell */
+    height: 180px;
+    border-radius: 1rem;
+    object-fit: cover;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+#news-section {
+    background-color: #fff;
+    padding: 1.8rem;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    border: 2px solid transparent;
+    max-width: 100%;
+    height: auto; /* Ensures it only takes needed height */
+    margin: 0 auto; /* Center it if required */
+    align-self: flex-start; /* Prevent flex stretching */
+}
+
+#news-section h3 {
+    font-size: 1.6em;
+    margin-bottom: 1.5rem;
+}
+
+.news-item {
+    margin-bottom: 1.2rem;
+}
+
+.news-item a {
+    font-weight: bold;
+    color: #1a73e8;
+    text-decoration: none;
+}
+
+.news-item a:hover {
+    text-decoration: underline;}
+
+
+/* Responsive adjustments */
+@media (max-width: 960px) {
+    .an_container {
+        grid-template-columns: 1fr;
+        padding: 1.5rem;
+        max-width: 100%;
+    }
+
+    .announcement, #news-section {
+        width: 100%; /* Ensures equal width */
+        margin: 0 auto 1.5rem; /* Centers each block and adds spacing */
+    }
+    #news-section {
+        order: 1; /* Move the news section to the bottom */
+        margin-top: 1.5rem;
+    }
+}
+
+@media (max-width: 800px) {
+    .announcement {
+        grid-template-columns: 1fr; /* Stack image and text vertically */
+    }
+
+    .announcement img {
+        order: -1; /* Move the image above the text */
+        margin-bottom: 1rem;
+    }
+
+    .announcement, #news-section {
+        width: 100%; /* Equal width for both blocks */
+        padding: 1.5rem;
+        margin: 0 auto 1.5rem;
+    }
+
+    #news-section {
+        order: 1; /* Move the news section to the bottom */
+        margin-top: 1rem;
+    }
+}
